@@ -8,6 +8,9 @@ import { Switch } from 'react-router-dom';
 import About from './Component/About/About';
 import NavBar from './Component/NavBar/NavBar.jsx';
 import Page404 from './Component/404/PageNotFound.jsx';
+import updates from './Component/UpdateRecipe/updates.jsx'
+
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +21,9 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/create" component={Create} />
             <Route exact path="/nav" component={NavBar} />
-            <Route path= '*' component={Page404} />
+            <Route path="/recipeupdate/:id" component={updates} />
+            {/* <Route path="/recipedelete/:id" component={RecipeDelete} /> */}
+            <Route path= '/*' component={Page404} />
       </Switch>
     </div>
   );

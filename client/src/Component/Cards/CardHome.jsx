@@ -20,7 +20,7 @@ export default function Cards ({id, name, image, diets}) {
             setLoading(true);
             try {
                 await dispatch(getRecipe());
-                await  dispatch(getDiet())
+                await dispatch(getDiet())
                 setLoading(false);
             } catch (error) {
                 setLoading(false);
@@ -74,8 +74,9 @@ export default function Cards ({id, name, image, diets}) {
     };
 
     const reset = (e) => {
-        e.preventDefault()
+        e.preventDefault(currentPage)
         dispatch(getRecipe())
+        dispatch(getDiet(1))
         setCurrentPage(1)
         setmaxPageLimit(4); // setea el numero maximo de paginas a mostrar en el paginado + la reciente
         setminPageLimit(0);
@@ -99,8 +100,10 @@ const handleFilteredCreates = (e)=> {
     setCurrentPage(1);
 }
 const handleFilteredDiet = (e) => {
+    e.preventDefault();
     dispatch(RECIPEFILTEREDBYDIET(e.target.value))
     setCurrentPage(1);
+    
 }
 
 return ( 

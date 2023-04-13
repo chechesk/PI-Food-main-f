@@ -6,7 +6,7 @@
 }
 .containerT{
     border-color: black solid 2rem;
-    width: 60px;
+     width: 60px;
     height: 60px;
 }
 footer {
@@ -19,14 +19,16 @@ footer {
     height: 60px;
 }
 .redux{ 
-    width: 110px;
-    height: 70px;
+    width: 100px;
+    height: 60px;
 }
 .express{    
     width: 110px;
-    height: 70px;
+    height: 60px;
+    background-size: cover;
 }
 .react{    
     width: 60px;
     height: 60px;
+    
 }

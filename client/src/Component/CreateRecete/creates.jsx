@@ -9,6 +9,8 @@ function validateInput(input){
     let errors = {};
     if(!input.name){
         errors.name = "Recipe name is required";
+    }else if ( input.name.length > 20) {
+        errors.name = "Hay mas de 20 character"
     } else if(!input.summary){
         errors.summary = "Recipe summary required";
     } else if(!input.healthscore || input.healthscore < 1 || input.healthscore > 100){
@@ -138,7 +140,7 @@ export default function RecipeCreate(){
 </div>
 <div>
   <label>Steps: </label>
-  <input type="text" value={input.steps} name="steps" placeholder="Enter the steps..." onChange={handleChange} />
+  <textarea type="text" value={input.steps} name="steps" placeholder="Enter the steps..."  rows="5" cols="40" onChange={handleChange} />
   {errors.steps && <p className='error'>{errors.steps}</p>}
 </div>
     {/* {errors.diets && <p className='error'>{errors.diets}</p>}

@@ -55,5 +55,34 @@ router.get('/',  async(req, res) => {
       }
   });
 
+  router.put('/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {name, image, summary, healthscore, steps, diets, createdInDb} = req.body;
+  try {
+      const updatedRecipe = await Recipe.update({ name, image, summary, healthscore, steps, diets, createdInDb}, {where: {id: id}, returning: true});
+    
+        let recipeDb = await Diet.findAll({ where :{ name:diets} });
+        await updatedRecipe.setDiets(recipeDb);
+
+    res.status(200).json({messa: 'Updated Completed'})
+    } catch (error) {
+           res.status(404).json({error: error.message})
+    }
+    })
+    router.delete('/:id', async (req, res) => {
+        const { id } = req.params;
+        try {
+          const recipe = await Recipe.findByPk(id);
+          if (recipe) {
+            await recipe.destroy();
+            res.status(200).json({ message: 'Receta eliminada correctamente' });
+          } else {
+            res.status(404).json({ error: 'Receta no encontrada' });
+          }
+        } catch (error) {
+          res.status(500).json({ error: error.message });
+        }
+      });
+      
   module.exports = router;
     

@@ -88,22 +88,22 @@ const getApiName = async (name) => {
         const ApiName = apiName.data.results
         
         if (ApiName.length > 0) {
-            let response = ApiName?.map((result)=> {
+            let response = ApiName?.map((e)=> {
                 return {
-                    name: result.title,
-                    vegetarian: result.vegetarian,
-                    vegan: result.vegan,
-                    glutenFree: result.glutenFree,
-                    dairyFree: result.dairyFree, 
-                    image: result.image, 
-                    idApi: result.id, 
-                    score: result.spoonacularScore,
-                    healthScore: result.healthScore,
-                    types: result.dishTypes?.map(element => element),  
-                    diets: result.diets?.map(element => element), 
-                    summary:result.summary, 
-                    steps: (result.analyzedInstructions[0] && result.analyzedInstructions[0].steps?result.analyzedInstructions[0].steps.map(item=>item.step).join(" \n"):'')
-                }
+                    id: e.id,
+                    image: e.image,
+                    name: e.title,
+                    diets: e.diets,
+                    summary: e.summary,
+                    score: e.spoonacularScore,
+                    healthscore: e.healthScore,
+                    dishTypes: e.dishTypes,
+                    steps: e.analyzedInstructions[0]?.steps.map(e => {
+                        return {
+                            number: e.number,
+                            step: e.step
+                        }
+                    }) }
             })
             return response
         } else {

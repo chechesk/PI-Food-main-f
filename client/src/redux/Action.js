@@ -1,4 +1,4 @@
-//import axios from 'axios'
+import axios from 'axios'
 export const GET_ALL_DIET = 'GET_ALL_DIET';
 export const  GET_ALL_RECIPES = 'GET_ALL_RECIPES';
 export const  ERROR = 'ERROR';
@@ -100,6 +100,23 @@ export function postRecipe(payload){
     //    }
     }
 }
+
+export function updateRecipe(payload, id){
+    return async function(dispatch){
+        const response = await axios.put(`http://localhost:3001/recipeupdate/${id}`, payload);
+        //console.log(response);
+        return response;
+    }
+}
+
+export function deleteRecipe(id){
+    return async function(dispatch){
+        const response = await axios.delete(`http://localhost:3001/recipedelete/${id}`)
+        console.log(response);
+        return response;
+    }
+}
+
 export const getDetail = (id) =>{
     return async (dispatch) => {
         try {
@@ -125,29 +142,29 @@ export const getDetail = (id) =>{
 }
 export const searchRecipe = (name) => {
     return async (dispatch) => {
-        try {
-            const response = await fetch(`http://localhost:3001/recipes/?name=`+name)
-            const recipe = await response.json()
-            dispatch({
-                type: SEARCH_RECIPE,
-                payload: recipe
-            })
-        } catch (error) {
-            dispatch({
-                type: ERROR,
-                payload: error,
-            })
-        }
-    //    try {
-    //        const json = await axios.get(`http://localhost:3001/recipes/?name=`+name)
-    //        return dispatch({
-    //            type: SEARCH_RECIPE, 
-    //            payload: json.data});
+        // try {
+        //     const response = await fetch(`http://localhost:3001/recipes?name=${name}`)
+        //     const recipe = await response.json()
+        //     dispatch({
+        //         type: SEARCH_RECIPE,
+        //         payload: recipe.data
+        //     })
+        // } catch (error) {
+        //     dispatch({
+        //         type: ERROR,
+        //         payload: error,
+        //     })
+        // }
+       try {
+           const json = await axios.get(`http://localhost:3001/recipes/?name=`+name)
+           return dispatch({
+               type: SEARCH_RECIPE, 
+               payload: json.data});
         
-    //    } catch (error) {
-    //     alert("Recipe not found");
-    //   console.log(error);
-    //    }
+       } catch (error) {
+        alert("Recipe not found");
+      console.log(error);
+       }
     }}
 
 //ordenamiento 
