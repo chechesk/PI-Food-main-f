@@ -1,0 +1,43 @@
+.paginadoContainer{
+    border-bottom: 3px solid black;
+    margin-top: 15px;
+  }
+  
+  .ul-paginadoContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 25px;
+    background-color: antiquewhite;
+    
+  }
+  
+  .numeroPaginado.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  .list{
+    
+   list-style: none;
+   transition: all 750ms ease;
+  
+  }
+  .list:hover{
+    transform: scale(1.5);
+  
+  }
+  .numeroPaginado{
+    border-radius: 8px;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  .numeroPaginado:focus{
+    /* filter:drop-shadow(0 0 35px black) */
+    transform: scale(1.5);
+  }
+  .list :active{
+    background-color: blue
+  }
+  .pageNumber{
+    color: rgb(206, 144, 63);
+  }

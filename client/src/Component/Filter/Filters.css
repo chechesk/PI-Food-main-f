@@ -1,0 +1,38 @@
+.containerF {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .filter-cnt {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .select-order--group {
+    width: 200px;
+    padding: 8px;
+    margin-right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+  
+  select {
+    width: 200px;
+    padding: 8px;
+    margin-right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+  
+  .navbar-cnt--button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }

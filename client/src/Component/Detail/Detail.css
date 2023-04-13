@@ -1,0 +1,54 @@
+.CardContainerD{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    /* background-image: url('https://img.freepik.com/fotos-premium/vista-superior-comida-rapida-espacio-copia_23-2148273099.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%; */
+    opacity: 0.9;
+    
+}
+.tittle{
+    font-size: xx-large;
+    text-shadow: wheat 2px 0 10px;
+}
+.botback{
+    align-items: center;
+}
+.imgContainer{
+    padding-top: 10px;
+    border-radius: 25px;
+
+}
+h2, h1, p{
+    padding-top: 15px;
+    text-shadow: wheat 1px 0 10px;
+}
+.contsummary{
+    
+    font-size: x-large;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-shadow: wheat 1px 0 10px;
+}
+.steps{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: blanchedalmond;
+    opacity: 0.6;
+    text-shadow: wheat 1px 0 10px;
+    font-size: x-large;
+}
+.li-s{
+    font-size: x-large;
+    padding: 10px;
+}
+p {
+    font-size: x-large;
+}
+h1{
+    text-shadow: wheat 1px 0 10px;
+
+}

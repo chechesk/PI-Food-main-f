@@ -1,0 +1,89 @@
+.logo{
+  border-radius: 150px;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position: 70%;
+  width: 60%;
+  float: left;
+}
+.navSearchBar{
+  display: flex;
+  flex-direction: row;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(212, 135, 20);
+  /* background-image: url('https://images.pexels.com/photos/1267360/pexels-photo-1267360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); */
+    
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+Cbar{
+	display: flex;
+  background-color: aliceblue;
+	width: 60%;
+	height: 50vh;
+	margin: auto;
+	max-width: 500px;
+	justify-content: space-between;
+	text-align: center;
+  
+}
+.li {
+  border-radius: 3px;
+  background-color: #ccc;
+	padding: 1rem 2rem 1.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebebeb;
+	min-width: 20px;
+	margin: auto;
+  
+}
+
+.li:hover {
+  background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 #ef816c;
+	font-weight: bold;
+}
+.li:active {
+  transform: translateY(4px);
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+.shameless-plug{
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  padding: 8px 20px;
+  color: #ccc;
+  text-decoration: none;
+}
