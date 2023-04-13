@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/create" component={Create} />
             <Route exact path="/nav" component={NavBar} />
-            <Route path= '/*' component={Page404} />
+            <Route path= '*' component={Page404} />
       </Switch>
     </div>
   );

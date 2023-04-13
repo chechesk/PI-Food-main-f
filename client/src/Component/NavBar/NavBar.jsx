@@ -13,7 +13,10 @@ export default function NavBar () {
     <div className="logo-container">
       <img src={brand} className="logo" alt="logo" />
     </div>
-      <h4>PI-FOOD BY Jose Romero</h4>
+    <div className="autor">
+      <h1>PI-FOOD BY </h1>
+      <h1>JOSE G ROMERO M</h1>
+    </div>
     <SearchBar className='navSearchBar'/>
     <div className="Cbar">
       <div>

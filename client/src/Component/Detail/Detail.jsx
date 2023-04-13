@@ -11,6 +11,7 @@ export default function Detail(props) {
   const [id] = useState(props.match.params.id);
   const detail = useSelector((state) => state.detail);
   const diets = detail?.diets;
+  
 
   useEffect(() => {
     dispatch(getDetail(id));
@@ -31,9 +32,9 @@ export default function Detail(props) {
         <div className="lineflex">
         </div>
         <h2>Types Diets</h2>
-        <p>{detail?.dietTypes || diets || diets.map((diet, index) => (
+        <p>{detail.dietTypes || (diets && detail.diets.map((diet, index) => (
       <li className='li-s' key={index}>{diet.number} {diet.name}</li>
-    ))}</p>
+    )))}</p>
         <h2>Health Score: {detail.healthscore || detail?.healthScore || detail.healthScore }</h2>
           <h1>Preparacion:</h1> 
           <div className='steps'>

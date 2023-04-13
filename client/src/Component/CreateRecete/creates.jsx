@@ -3,6 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {postRecipe, getDiet} from '../../redux/Action';
 import './creates.css'
+import NavBar from '../NavBar/NavBar';
 
 function validateInput(input){
     let errors = {};
@@ -100,6 +101,7 @@ export default function RecipeCreate(){
 
     return (
         <div className='cont'>
+          <NavBar/>
             
             <form onSubmit={e=>handleSubmit(e)} className="form-input">
             <h1>Create your new recipe</h1>

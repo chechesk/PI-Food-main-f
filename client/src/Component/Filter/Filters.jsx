@@ -37,13 +37,13 @@ const Filters = ({handleOrder, handleFilteredDiet, handleFilteredCreates, reset,
                     <option value="whole 30">Whole 30</option>
                 </select>
                 </div>
-               <div>
+               {/* <div>
                 
                 <select defaultValue='Filter by type' onChange={evt => handleFilteredDiet(evt)}>
                     <option disabled>Filter by type</option>
                             {diet?.map((type) => <option key={type.name} value={type.name}>{type.name}</option>)}
                 </select>  
-               </div>
+               </div> */}
                   
 
       <div  className='navbar-cnt_clear'>

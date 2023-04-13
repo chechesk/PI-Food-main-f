@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios'
 export const GET_ALL_DIET = 'GET_ALL_DIET';
 export const  GET_ALL_RECIPES = 'GET_ALL_RECIPES';
 export const  ERROR = 'ERROR';
@@ -17,11 +17,43 @@ export const RECIPE_FILTERED_BY_DIET = 'RECIPE_FILTER';
 export const getRecipe = () =>{
     return async (dispatch) =>{
         try {
-            const response = await axios.get('http://localhost:3001/recipes')
-            const recipes = response.data
+           const response = await fetch('http://localhost:3001/recipes')
+           const recipes = await response.json()
+           dispatch({
+            type: GET_ALL_RECIPES,
+            payload: recipes
+           })
+        } catch (error) {
             dispatch({
-                type: GET_ALL_RECIPES,
-                payload: recipes
+                type: ERROR,
+                payload: error,
+            })
+        }
+        // con AXIOS
+        // try {
+        //     const response = await axios.get('http://localhost:3001/recipes')
+        //     const recipes = response.data
+        //     dispatch({
+        //         type: GET_ALL_RECIPES,
+        //         payload: recipes
+        //     })
+        // } catch (error) {
+        //     dispatch({
+        //         type: ERROR,
+        //         payload: error,
+        //     })
+        // }
+    }
+}
+
+export const getDiet = () =>{
+    return async (dispatch) =>{
+        try {
+            const response = await fetch('http://localhost:3001/diet')
+            const diet = await  response.json()
+            dispatch({
+                type: GET_ALL_DIET,
+                payload: diet
             })
         } catch (error) {
             dispatch({
@@ -29,55 +61,93 @@ export const getRecipe = () =>{
                 payload: error,
             })
         }
-    }
-}
-
-export const getDiet = () =>{
-    return async (dispatch) =>{
-        try {
-            const response = await axios.get('http://localhost:3001/diet')
-            const diet = response.data
-            dispatch({
-                type: GET_ALL_DIET,
-                payload: diet
-            })
-        } catch (error) {
-            dispatch({ type: ERROR, payload: error,})
-        }
+        
+        // CON AXIOS
+        //try {
+        //     const response = await axios.get('http://localhost:3001/diet')
+        //     const diet = response.data
+        //     dispatch({
+        //         type: GET_ALL_DIET,
+        //         payload: diet
+        //     })
+        // } catch (error) {
+        //     dispatch({ type: ERROR, payload: error,})
+        // }
     }
 }
 export function postRecipe(payload){
     return async function(dispatch){
-       try {
-           const response = await axios.post("http://localhost:3001/recipe", payload);
-           //console.log(response);
-           return response;
+        try {
+            const response = await fetch("http://localhost:3001/recipe", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+            const data = await response.json();
+            return data;
+          } catch (error) {
+            dispatch({ type: ERROR, payload: error });
+          }
+    //    try {
+    //        const response = await axios.post("http://localhost:3001/recipe", payload);
+    //        //console.log(response);
+    //        return response;
         
-       } catch (error) {
-        dispatch({type: ERROR, payload:error})
-       }
+    //    } catch (error) {
+    //     dispatch({type: ERROR, payload:error})
+    //    }
     }
 }
 export const getDetail = (id) =>{
     return async (dispatch) => {
-        const RecipeDetail = await axios.get(`http://localhost:3001/recipes/${id}`)
-        return dispatch({
-            type: DETAILS, 
-            payload: RecipeDetail.data});
+        try {
+            const response = await fetch(`http://localhost:3001/recipes/${id}`);
+            const recipe = await response.json();
+            dispatch({
+              type: DETAILS,
+              payload: recipe
+            });
+          } catch (error) {
+            dispatch({
+              type: ERROR,
+              payload: error
+            });
+          }
+        
+      
+        // const RecipeDetail = await axios.get(`http://localhost:3001/recipes/${id}`)
+        // return dispatch({
+        //     type: DETAILS, 
+        //     payload: RecipeDetail.data});
     }
 }
 export const searchRecipe = (name) => {
     return async (dispatch) => {
-       try {
-           const json = await axios.get(`http://localhost:3001/recipes/?name=`+name)
-           return dispatch({
-               type: SEARCH_RECIPE, 
-               payload: json.data});
+        try {
+            const response = await fetch(`http://localhost:3001/recipes/?name=`+name)
+            const recipe = await response.json()
+            dispatch({
+                type: SEARCH_RECIPE,
+                payload: recipe
+            })
+        } catch (error) {
+            dispatch({
+                type: ERROR,
+                payload: error,
+            })
+        }
+    //    try {
+    //        const json = await axios.get(`http://localhost:3001/recipes/?name=`+name)
+    //        return dispatch({
+    //            type: SEARCH_RECIPE, 
+    //            payload: json.data});
         
-       } catch (error) {
-        alert("Recipe not found");
-      console.log(error);
-       }
+    //    } catch (error) {
+    //     alert("Recipe not found");
+    //   console.log(error);
+    //    }
     }}
 
 //ordenamiento 

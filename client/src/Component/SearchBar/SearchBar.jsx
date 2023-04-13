@@ -2,10 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {  searchRecipe } from '../../redux/Action'
-//import "../SearchBar/SearchBar.css"
+import "../SearchBar/SearchBar.css"
 //import {GET_API_NAME,} from '../../redux/actions'
 
-const searchlogo = 'https://cdn.icon-icons.com/icons2/692/PNG/512/seo-social-web-network-internet_340_icon-icons.com_61497.png'
+import searchlogo from './ico/search.png'
 
 const SearchBar = () => {
   
