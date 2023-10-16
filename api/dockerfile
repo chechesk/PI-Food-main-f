@@ -3,12 +3,12 @@ FROM node:16 as development
 WORKDIR /api/
 COPY package*.json ./
 RUN npm install
-COPY ./api/src ./api/src
+COPY ./ ./
 CMD [ "npm", "run", "start:dev" ]
 
 # Builder stage
 FROM development as builder
-WORKDIR /api/
+WORKDIR /
 # Build the app with devDependencies still installed from "development" stage
 RUN npm run build
 # Clear dependencies and reinstall for production (no devDependencies)
