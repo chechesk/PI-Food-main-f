@@ -3,7 +3,7 @@ FROM node:16 as development
 WORKDIR /api/
 COPY package*.json ./
 RUN npm install
-COPY ./api/src ./src
+COPY ./src ./src
 CMD [ "npm", "run", "start:dev" ]
 
 # Builder stage
