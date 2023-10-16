@@ -1,14 +1,14 @@
-#Development stage
+# Development stage
 FROM node:16 as development
-WORKDIR /api/
-COPY package*.json ./
+WORKDIR /api/src/app
+COPY package*.json tsconfig.json ./
 RUN npm install
-COPY ./api/src ./api/src
+COPY ./src ./src
 CMD [ "npm", "run", "start:dev" ]
 
 # Builder stage
 FROM development as builder
-WORKDIR /api/
+WORKDIR /api/src/app
 # Build the app with devDependencies still installed from "development" stage
 RUN npm run build
 # Clear dependencies and reinstall for production (no devDependencies)
@@ -19,5 +19,5 @@ RUN npm ci --only=production
 FROM alpine:latest as production
 RUN apk --no-cache add nodejs ca-certificates
 WORKDIR /root/
-COPY --from=builder /api/ ./
+COPY --from=builder /api/src/app ./
 CMD [ "node", "./build/index.js" ]
