@@ -1,9 +1,9 @@
 #Development stage
 FROM node:16 as development
-WORKDIR /api/src/app
+WORKDIR /api/
 COPY package*.json ./
 RUN npm install
-COPY ./api/src ./api/src
+COPY ./api/src ./src
 CMD [ "npm", "run", "start:dev" ]
 
 # Builder stage
