@@ -19,5 +19,5 @@ RUN npm ci --only=production
 FROM alpine:latest as production
 RUN apk --no-cache add nodejs ca-certificates
 WORKDIR /root/
-COPY --from=builder /usr/src/app ./
+COPY --from=builder /api/src/app ./
 CMD [ "node", "./build/index.js" ]
