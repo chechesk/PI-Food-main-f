@@ -1,0 +1,94 @@
+
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .form-input div {
+    margin-bottom: 10px;
+  }
+  
+  .form-input label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .form-input input[type="text"],
+  .form-input textarea,
+  .form-input input[type="number"] {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  
+  .form-input input[type="text"]:focus,
+  .form-input textarea:focus,
+  .form-input input[type="number"]:focus {
+    outline: none;
+    border-color: #6bb9f0;
+  }
+  
+  .form-input .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .name{
+    padding-top: 20px;
+  }
+  .form-input ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-input li {
+    margin-top: 10px;
+  }
+  
+  .form-input button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6bb9f0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .form-input button:disabled {
+    background-color: #ccc;
+    cursor: default;
+  }
+  
+  .form-input button:hover:not(:disabled) {
+    background-color: #3f8ecb;
+  }
+  .dietTypes{
+    display: flex;
+    flex-direction: column;
+    align-items: row;
+    width: 280px;
+    height: 40px;
+  }
+
+  .error{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .checkbox{
+    padding: 50px;
+  }
+  .buttonForm{
+    padding-top: 500px;
+    align-self: center;
+    
+  }

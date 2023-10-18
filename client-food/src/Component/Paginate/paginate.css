@@ -1,0 +1,59 @@
+.paginadoContainer{
+    border-bottom: 3px solid black;
+    margin-top: 15px;
+  }
+  
+  .ul-paginadoContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 25px;
+    gap: 10px;
+    
+    
+  }
+  
+  .list{
+    
+   list-style: none;
+   transition: all 750ms ease;
+  
+  }
+  .list:hover{
+    transform: scale(1.5);
+  
+  }
+  .numeroPaginado{
+    border-radius: 25px;
+    padding: 20px;
+    background-color: transparent;
+    font-size:larger;
+    text-decoration: none;
+  }
+  .numeroPaginado:focus{
+    /* filter:drop-shadow(0 0 35px black) */
+    transform: scale(1.5);
+  }
+  .numeroPaginado.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  .pageNumber{
+    border-radius: 4px;
+    color: rgb(42, 104, 158);
+    color: rgb(11, 9, 7);
+  }
+  .s.active {
+    background-color: dodgerblue;
+    }
+  .pageHover button:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  .p{
+    border-radius: 25px;
+    padding: 20px;
+    background-color:dimgrey;
+    font-size:larger;
+    text-decoration: none;
+  }

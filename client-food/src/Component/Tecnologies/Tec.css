@@ -1,0 +1,34 @@
+.img-c{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+.containerT{
+    border-color: black solid 2rem;
+     width: 60px;
+    height: 60px;
+}
+footer {
+    border-color: black solid 2rem;
+    width: 60px;
+    height: 60px;
+}
+.node{
+    width: 60px;
+    height: 60px;
+}
+.redux{ 
+    width: 100px;
+    height: 60px;
+}
+.express{    
+    width: 110px;
+    height: 60px;
+    background-size: cover;
+}
+.react{    
+    width: 60px;
+    height: 60px;
+    
+}
